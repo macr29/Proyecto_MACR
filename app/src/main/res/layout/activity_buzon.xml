@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1">
+
+    <LinearLayout
+        android:id="@+id/cuadroTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/azul">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUZÓN DE MENSAJES"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="18dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textSinMensajes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Aún no tienes ningún mensaje"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMensajes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cuadroTitulo"
+        android:paddingTop="8dp"
+        android:padding="24dp"/>
+</RelativeLayout>

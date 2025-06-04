@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_clubes"
+        android:icon="@drawable/cita"
+        android:title="Reserva Pista" />
+
+    <item
+        android:id="@+id/nav_partidos"
+        android:icon="@drawable/icon_club"
+        android:title="Historial de Partidos" />
+
+    <item
+        android:id="@+id/nav_usuarios"
+        android:icon="@drawable/manos"
+        android:title="Encuentra Jugadores" />
+
+    <item
+        android:id="@+id/nav_nivel"
+        android:icon="@drawable/progreso"
+        android:title="Calcula tu Nivel" />
+
+    <item
+        android:id="@+id/nav_mensajes"
+        android:icon="@drawable/sobre"
+        android:title="Buzón de Mensajes" />
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@drawable/icon_usuario"
+        android:title="Tu Perfil" />
+
+    <item
+        android:id="@+id/nav_cerrar"
+        android:icon="@drawable/icon_cerrar"
+        android:title="Cerrar Sesión" />
+</menu>

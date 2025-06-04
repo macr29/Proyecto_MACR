@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
+    tools:context=".activities.ReservaActivity">
+
+    <LinearLayout
+        android:id="@+id/panel_club"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Logo del club -->
+        <ImageView
+            android:id="@+id/logo_club"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_club"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="10dp" />
+
+        <!-- Información del club -->
+        <LinearLayout
+            android:id="@+id/panel_info_club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nombre_club"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Club"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/ciudad_club"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ciudad"
+                android:textSize="18sp"
+                android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/panel_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/panel_club"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/texto_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha: "
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_seleccionar_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cambiar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/azul"/>
+    </LinearLayout>
+
+
+    <TableLayout
+        android:id="@+id/tabla_reservas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:stretchColumns="0,1,2"
+        app:layout_constraintTop_toBottomOf="@+id/panel_fecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Cabecera -->
+        <TableRow android:background="@color/azul">
+            <TextView
+                android:text="Pista 1"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@color/azul"
+                android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView
+                android:text="Pista 2"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@color/azul"
+                android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView
+                android:text="Pista 3"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@color/azul"
+                android:padding="12dp"
+                android:onClick="onCellClick"/>
+        </TableRow>
+
+        <!-- Horas -->
+        <TableRow>
+            <TextView android:text="08:00 - 09:30" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="08:00 - 09:30" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="08:00 - 09:30" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="09:30 - 11:00" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="09:30 - 11:00" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="09:30 - 11:00" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="11:00 - 12:30" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="11:00 - 12:30" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="11:00 - 12:30" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="12:30 - 14:00" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="12:30 - 14:00" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+            <TextView android:text="12:30 - 14:00" android:layout_height="80dp"
+                android:layout_margin="1dp" android:gravity="center" android:background="@color/azul_claro"
+                android:textSize="15sp" android:padding="12dp"
+                android:onClick="onCellClick"/>
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

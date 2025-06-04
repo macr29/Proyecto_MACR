@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/azul">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tituloNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CALCULA TU NIVEL"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="18dp" />
+        </LinearLayout>
+
+        <!-- Panel principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="32dp"
+            android:elevation="2dp">
+
+            <!-- Frecuencia mensual -->
+            <TextView
+                android:id="@+id/textFrecuencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Partidos en el último mes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="4dp" />
+
+            <SeekBar
+                android:id="@+id/seekFrecuencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="30"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/textFrecuenciaValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 partidos al mes"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Checkbox entrenamientos -->
+            <CheckBox
+                android:id="@+id/checkEntrenos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entreno con frecuencia"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Checkbox torneos -->
+            <CheckBox
+                android:id="@+id/checkTorneos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Participo en torneos"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Posición en la pista -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posición en la pista:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupPosicion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <RadioButton
+                    android:id="@+id/radioDerecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Derecha"
+                    android:textColor="@android:color/black"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioReves"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Revés"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radioIndiferente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Indiferente"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="16dp" />
+            </RadioGroup>
+
+            <!-- Estilo de juego -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estilo de juego:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupEstilo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <RadioButton
+                    android:id="@+id/radioEquilibrado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Equilibrado"
+                    android:textColor="@android:color/black"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioOfensivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ofensivo"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radioDefensivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Defensivo"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="16dp" />
+            </RadioGroup>
+
+            <!-- Nivel calculado -->
+            <TextView
+                android:id="@+id/textNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel actual:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="4dp" />
+
+            <ProgressBar
+                android:id="@+id/progressNivel"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:max="5"
+                android:progress="1"
+                android:progressTint="@color/azul"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Descripción del nivel -->
+            <TextView
+                android:id="@+id/textDescripcionNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PRINCIPIANTE"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/azul"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- Botón calcular -->
+        <Button
+            android:id="@+id/btnCalcularNivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calcular Nivel"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:backgroundTint="@color/azul"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+</ScrollView>
